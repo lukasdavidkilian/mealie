@@ -28,7 +28,10 @@ def getMeals(foodArray, goals):
     if(protein >= -10 and protein <= 10 and fat >= -5 and fat <= 5 and carbs >= -10 and carbs <= 10):
         Day(emptyArray, goals[0], goals[1], goals[2])
 
-goals = [230,65,270]
+goals = [150,70,250]
 
-for t in range(100000):
-    getMeals(lukas, goals)
+def mealie(foodArray, goals):
+    for t in range(100000):
+        getMeals(foodArray, goals)
+
+mealie(lukas, goals)

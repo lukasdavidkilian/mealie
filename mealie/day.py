@@ -1,7 +1,6 @@
 days = []
 
 class Day:
-
     food: []
     proteinGoal: int
     fatGoal: int
@@ -24,23 +23,16 @@ def ausgabe(Day):
     for i in range(len(Day.food)):
         food = Day.food[i]
         dailyAmount = food.amount * food.dailyAmount
-        foodStr = "{amount} {unit} {name} ".format(amount=int(dailyAmount), name=food.name,
-                                                  unit=food.unit)
+        foodStr = str(int(dailyAmount)) + " " + food.unit + " " + food.name + " "
 
         Day.protein = Day.protein + round(food.protein * food.dailyAmount)
         Day.fat = Day.fat + round(food.fat * food.dailyAmount)
         Day.carbs = Day.carbs + round(food.carbs * food.dailyAmount)
 
-
         print(foodStr)
 
-        macroStr = "SOLL: P {proteinGoal}g F {fatGoal}g C {carbsGoal}g\n" \
-                    "IST:  P {protein}g F {fat}g C {carbs}g".format(proteinGoal= Day.proteinGoal,
-                                                                                    protein= Day.protein,
-                                                                                    fatGoal= Day.fatGoal, fat= Day.fat,
-                                                                                    carbsGoal= Day.carbsGoal,
-                                                                                    carbs=  Day.carbs
-                                                                                    )
-    print("")
-    print(macroStr)
-    print("")
+        macroStr = "SOLL: P " + str(Day.proteinGoal) + "g F " + str(Day.fatGoal) + "g C " + \
+                   str(Day.carbsGoal) + "g\n" + "IST:  P " + str(Day.protein) + "g F " + \
+                   str(Day.fat) + "g C " + str(Day.carbs) + "g"
+
+    print("\n" + macroStr + "\n")
