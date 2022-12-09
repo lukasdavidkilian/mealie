@@ -18,21 +18,35 @@ class meal_plan:
         meal_plans.append(self)
 
     def __str__(self):
-        for i in range(len(self.food)):
-            food = self.food[i]
-            dailyAmount = food.amount * food.dailyAmount
-            foodStr = str(int(dailyAmount)) + " " + food.unit + " " + food.name + " "
+        # Initialize a string for the meal plan
+        meal_plan_str = ""
 
-            self.protein = self.protein + round(food.protein * food.dailyAmount)
-            self.fat = self.fat + round(food.fat * food.dailyAmount)
-            self.carbs = self.carbs + round(food.carbs * food.dailyAmount)
+        # Calculate the maximum length of the food names and units
+        # (to determine the width of the columns in the table)
+        max_name_length = max(len(food.name) for food in self.food)
+        max_unit_length = max(len(food.unit) for food in self.food)
 
-            print(foodStr)
+        # Loop over the foods in the meal plan
+        for food in self.food:
+            # Calculate the daily amount of the food
+            daily_amount = food.amount * food.dailyAmount
 
-            macroStr = "SOLL: P " + str(self.proteinGoal) + "g F " + str(self.fatGoal) + "g C " + \
-                       str(self.carbsGoal) + "g\n" + "IST:  P " + str(self.protein) + "g F " + \
-                       str(self.fat) + "g C " + str(self.carbs) + "g"
+            # Format the food and its daily amount as a row in the table
+            meal_plan_str += (
+                f"{daily_amount:>5.0f} {food.unit:<{max_unit_length}} "
+                f"{food.name:<{max_name_length}}\n"
+            )
 
-        return("\n" + macroStr + "\n")
+        # Calculate the total amount of each nutrient in the meal plan
+        protein = sum(food.protein * food.dailyAmount for food in self.food)
+        fat = sum(food.fat * food.dailyAmount for food in self.food)
+        carbs = sum(food.carbs * food.dailyAmount for food in self.food)
 
+        # Format the goals and totals for the macro nutrients
+        macro_str = (
+            "SOLL: P {:.0f}g F {:.0f}g C {:.0f}g\n"
+            " IST: P {:.0f}g F {:.0f}g C {:.0f}g"
+        ).format(self.proteinGoal, self.fatGoal, self.carbsGoal, protein, fat, carbs)
 
+        # Return the meal plan string and macro nutrient string
+        return f"\n{meal_plan_str}\n{macro_str}\n"
