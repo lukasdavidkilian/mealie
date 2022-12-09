@@ -1,8 +1,8 @@
 from foodClass import Food
 
-foodList = []
-lukas = []
-daniel = []
+nutrition_set_all = []
+nutrition_set_lukas = []
+nutrition_set_daniel = []
 
 # PROTEIN
 
@@ -16,9 +16,9 @@ eier = Food("Eier", 7.5, 6.5, 1, 1, "", [3, 4, 5,])
 milch = Food("Milch", 3.3, 4, 4.8, 100, "ml", [2.5, 3, 3.5, 4])
 käse = Food("Käse", 30, 23, 0.1, 100, "g", [0.75, 1])
 
-foodList.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
-lukas.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, eier, milch, käse])
-daniel.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen])
+nutrition_set_all.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
+nutrition_set_lukas.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, eier, milch, käse])
+nutrition_set_daniel.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen])
 
 # CARBS
 
@@ -31,15 +31,15 @@ banane = Food("Banane", 1.1, 0.3, 22.8, 100, "g", [1, 2])
 apfel = Food("Apfel", 0.3, 0.2, 14, 100, "g", [1.5])
 heidelbeeren = Food("Heidelbeeren", 0.6, 0.6, 7.4, 100, "g", [1, 1.5, 2])
 
-foodList.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
-lukas.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
-daniel.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
+nutrition_set_all.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
+nutrition_set_lukas.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
+nutrition_set_daniel.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
 
 # Nuts & Seeds
 
 nusskernmischung = Food("Nusskernmischung", 21, 56, 11, 100, "g", [0.3])
 
-foodList.extend([nusskernmischung])
-lukas.extend([nusskernmischung])
-daniel.extend([nusskernmischung])
+nutrition_set_all.extend([nusskernmischung])
+nutrition_set_lukas.extend([nusskernmischung])
+nutrition_set_daniel.extend([nusskernmischung])
 
