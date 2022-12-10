@@ -1,4 +1,4 @@
-from foodClass import Food
+from food_class import Food
 
 nutrition_set_all = []
 nutrition_set_lukas = []

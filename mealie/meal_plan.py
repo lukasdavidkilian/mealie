@@ -1,6 +1,6 @@
 meal_plans = []
 
-class meal_plan:
+class MealPlan:
     food: []
     proteinGoal: int
     fatGoal: int
@@ -14,8 +14,8 @@ class meal_plan:
         self.protein = 0
         self.fat = 0
         self.carbs = 0
-        print(self)
         meal_plans.append(self)
+        print(self)
 
     def __str__(self):
         # Initialize a string for the meal plan

@@ -1,8 +1,5 @@
 import random
-from food import nutrition_set_lukas
-from meal_plan import meal_plan, meal_plans
-
-
+from meal_plan import MealPlan, meal_plans
 def mealie(nutrition_set, goals):
     while len(meal_plans) < 3:
         protein_goal = goals[0]
@@ -27,7 +24,5 @@ def mealie(nutrition_set, goals):
                     carbohydrate -= current_food.carbs * current_food.dailyAmount
                     plan_array.append(current_food)
         if -10 <= protein <= 10 and -5 <= fat <= 5 and -10 <= carbohydrate <= 10:
-            meal_plan(plan_array, goals[0], goals[1], goals[2])
+            MealPlan(plan_array, goals[0], goals[1], goals[2])
     return meal_plans
-
-mealie(nutrition_set_lukas, [230, 65, 280])
