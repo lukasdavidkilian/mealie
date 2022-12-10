@@ -1,5 +1,7 @@
 import random
 from meal_plan import MealPlan, meal_plans
+
+
 def mealie(nutrition_set, goals):
     while len(meal_plans) < 3:
         protein_goal = goals[0]
