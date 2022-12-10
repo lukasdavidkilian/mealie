@@ -1,16 +1,17 @@
 meal_plans = []
 
+
 class MealPlan:
     food: []
-    proteinGoal: int
-    fatGoal: int
-    carbsGoal: int
+    protein_goal: int
+    fat_goal: int
+    carbohydrate_goal: int
 
-    def __init__(self, food, proteinGoal, fatGoal, carbsGoal):
+    def __init__(self, food, protein_goal, fat_goal, carbohydrate_goal):
         self.food = food
-        self.proteinGoal = proteinGoal
-        self.fatGoal = fatGoal
-        self.carbsGoal = carbsGoal
+        self.protein_goal = protein_goal
+        self.fat_goal = fat_goal
+        self.carbohydrate_goal = carbohydrate_goal
         self.protein = 0
         self.fat = 0
         self.carbs = 0
@@ -29,7 +30,7 @@ class MealPlan:
         # Loop over the foods in the meal plan
         for food in self.food:
             # Calculate the daily amount of the food
-            daily_amount = food.amount * food.dailyAmount
+            daily_amount = food.amount * food.daily_amount
 
             # Format the food and its daily amount as a row in the table
             meal_plan_str += (
@@ -38,15 +39,15 @@ class MealPlan:
             )
 
         # Calculate the total amount of each nutrient in the meal plan
-        protein = sum(food.protein * food.dailyAmount for food in self.food)
-        fat = sum(food.fat * food.dailyAmount for food in self.food)
-        carbs = sum(food.carbs * food.dailyAmount for food in self.food)
+        protein = sum(food.protein * food.daily_amount for food in self.food)
+        fat = sum(food.fat * food.daily_amount for food in self.food)
+        carbs = sum(food.carbs * food.daily_amount for food in self.food)
 
         # Format the goals and totals for the macro nutrients
         macro_str = (
             "SOLL: P {:.0f}g F {:.0f}g C {:.0f}g\n"
             " IST: P {:.0f}g F {:.0f}g C {:.0f}g"
-        ).format(self.proteinGoal, self.fatGoal, self.carbsGoal, protein, fat, carbs)
+        ).format(self.protein_goal, self.fat_goal, self.carbohydrate_goal, protein, fat, carbs)
 
         # Return the meal plan string and macro nutrient string
         return f"\n{meal_plan_str}\n{macro_str}\n"
