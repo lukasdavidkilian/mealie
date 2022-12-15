@@ -7,6 +7,7 @@ class Food:
         self.amount = amount
         self.unit = unit
         self.recommended_amounts = recommended_amounts
+        self.daily_amount = 0
 
 
 

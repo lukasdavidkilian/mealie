@@ -2,8 +2,9 @@ import random
 from meal_plan import MealPlan, meal_plans
 
 
-def mealie(nutrition_set, goals):
-    while len(meal_plans) < 3:
+def generate_meal_plans(nutrition_set, goals):
+    while len(meal_plans) < 1:
+
         protein_goal = goals[0]
         fat_goal = goals[1]
         carbohydrate_goal = goals[2]
@@ -15,9 +16,8 @@ def mealie(nutrition_set, goals):
         plan_array = []
 
         for current_food in nutrition_set:
-            new_nutrition_set = nutrition_set
             if protein >= -10 and fat >= -5 and carbohydrate >= -10:
-                current_food = random.choice(new_nutrition_set)
+                current_food = random.choice(nutrition_set)
                 random_recommended_amount = random.choice(current_food.recommended_amounts)
                 if current_food not in plan_array:
                     current_food.daily_amount = random_recommended_amount
