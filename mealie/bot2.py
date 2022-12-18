@@ -14,9 +14,7 @@ def mealie(update, context):
         result = generate_meal_plans(nutrition_set_lukas, goals)
         # Use the __str__ method to convert the result to a string
         result_str = ""
-        for meal_plan in result:
-            result_str += meal_plan.__str__() + "\n"
-        del meal_plans[:]
+        result_str += result.__str__() + "\n"
         update.message.reply_text(result_str)
 
 def protein(update, context):

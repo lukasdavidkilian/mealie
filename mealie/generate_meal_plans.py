@@ -3,8 +3,7 @@ from meal_plan import MealPlan, meal_plans
 
 
 def generate_meal_plans(nutrition_set, goals):
-    while len(meal_plans) < 1:
-
+    while True:
         protein_goal = goals[0]
         fat_goal = goals[1]
         carbohydrate_goal = goals[2]
@@ -14,17 +13,18 @@ def generate_meal_plans(nutrition_set, goals):
         carbohydrate = carbohydrate_goal
 
         plan_array = []
+        amounts_dictionary = {}
 
         for current_food in nutrition_set:
             if protein >= -10 and fat >= -5 and carbohydrate >= -10:
                 current_food = random.choice(nutrition_set)
-                random_recommended_amount = random.choice(current_food.recommended_amounts)
                 if current_food not in plan_array:
-                    current_food.daily_amount = random_recommended_amount
-                    protein -= current_food.protein * current_food.daily_amount
-                    fat -= current_food.fat * current_food.daily_amount
-                    carbohydrate -= current_food.carbs * current_food.daily_amount
+                    random_recommended_amount = random.choice(current_food.recommended_amounts)
+                    amounts_dictionary[current_food] = random_recommended_amount
+                    protein -= current_food.protein * amounts_dictionary[current_food]
+                    fat -= current_food.fat * amounts_dictionary[current_food]
+                    carbohydrate -= current_food.carbs * amounts_dictionary[current_food]
                     plan_array.append(current_food)
         if -10 <= protein <= 10 and -5 <= fat <= 5 and -10 <= carbohydrate <= 10:
-            MealPlan(plan_array, goals[0], goals[1], goals[2])
-    return meal_plans
+            meal_plan = MealPlan(plan_array, goals[0], goals[1], goals[2], amounts_dictionary)
+            return meal_plan

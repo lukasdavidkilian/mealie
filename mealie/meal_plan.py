@@ -6,12 +6,14 @@ class MealPlan:
     protein_goal: int
     fat_goal: int
     carbohydrate_goal: int
+    dict: {}
 
-    def __init__(self, food, protein_goal, fat_goal, carbohydrate_goal):
+    def __init__(self, food, protein_goal, fat_goal, carbohydrate_goal, amounts_dictionary):
         self.food = food
         self.protein_goal = protein_goal
         self.fat_goal = fat_goal
         self.carbohydrate_goal = carbohydrate_goal
+        self.amounts_dictionary = amounts_dictionary
         self.protein = 0
         self.fat = 0
         self.carbs = 0
@@ -30,7 +32,7 @@ class MealPlan:
         # Loop over the foods in the meal plan
         for food in self.food:
             # Calculate the daily amount of the food
-            daily_amount = food.amount * food.daily_amount
+            daily_amount = food.amount * self.amounts_dictionary[food]
 
             # Format the food and its daily amount as a row in the table
             meal_plan_str += (
@@ -39,9 +41,9 @@ class MealPlan:
             )
 
         # Calculate the total amount of each nutrient in the meal plan
-        protein = sum(food.protein * food.daily_amount for food in self.food)
-        fat = sum(food.fat * food.daily_amount for food in self.food)
-        carbs = sum(food.carbs * food.daily_amount for food in self.food)
+        protein = sum(food.protein * self.amounts_dictionary[food] for food in self.food)
+        fat = sum(food.fat * self.amounts_dictionary[food] for food in self.food)
+        carbs = sum(food.carbs * self.amounts_dictionary[food] for food in self.food)
 
         # Format the goals and totals for the macro nutrients
         macro_str = (
