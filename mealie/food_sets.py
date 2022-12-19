@@ -4,6 +4,12 @@ nutrition_set_all = []
 nutrition_set_lukas = []
 nutrition_set_daniel = []
 
+nutrition_sets = {
+    "lukas": nutrition_set_lukas,
+    "daniel": nutrition_set_daniel,
+    "all": nutrition_set_all
+}
+
 # PROTEIN
 
 rinderhackfleisch = Food("Rinderhackfleisch", 25, 9, 0, 100, "g", [2.5, 3, 3.5, 4])
