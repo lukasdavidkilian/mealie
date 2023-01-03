@@ -5,12 +5,14 @@ nutrition_set_lukas = []
 nutrition_set_daniel = []
 
 nutrition_set_lucas = nutrition_set_all
+nutrition_set_rico = nutrition_set_all
 
 nutrition_sets = {
     "lukas": nutrition_set_lukas,
     "daniel": nutrition_set_daniel,
     "all": nutrition_set_all,
-    "lucas": nutrition_set_lucas
+    "lucas": nutrition_set_lucas,
+    "rico": nutrition_set_rico
 }
 
 # PROTEIN
@@ -71,6 +73,7 @@ raeuchertofu = Food("Räuchertofu", 19, 9, 2.8, 100, "g", [1, 2])
 nutrition_set_all.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
 nutrition_set_lukas.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
 nutrition_set_daniel.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
+nutrition_set_rico.remove(buchweizen, süßkartoffeln)
 
 # FAT
 
