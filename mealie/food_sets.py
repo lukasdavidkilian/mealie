@@ -4,10 +4,13 @@ nutrition_set_all = []
 nutrition_set_lukas = []
 nutrition_set_daniel = []
 
+nutrition_set_lucas = nutrition_set_all
+
 nutrition_sets = {
     "lukas": nutrition_set_lukas,
     "daniel": nutrition_set_daniel,
-    "all": nutrition_set_all
+    "all": nutrition_set_all,
+    "lucas": nutrition_set_lucas
 }
 
 # PROTEIN
@@ -28,6 +31,8 @@ kidneybohnen = Food("Kidneybohnen", 21, 1, 36.5, 100, "g", [0.75, 1])
 nutrition_set_all.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
 nutrition_set_lukas.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, eier, milch, käse])
 nutrition_set_daniel.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen])
+nutrition_set_lucas.remove(milch)
+
 
 # CARBS
 
