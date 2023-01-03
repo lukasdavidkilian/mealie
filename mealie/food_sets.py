@@ -73,7 +73,9 @@ raeuchertofu = Food("Räuchertofu", 19, 9, 2.8, 100, "g", [1, 2])
 nutrition_set_all.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
 nutrition_set_lukas.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
 nutrition_set_daniel.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
-nutrition_set_rico.remove(buchweizen, süßkartoffeln)
+nutrition_set_lucas.remove(buchweizen)
+nutrition_set_rico.remove(buchweizen)
+nutrition_set_rico.remove(süßkartoffeln)
 
 # FAT
 
