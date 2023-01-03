@@ -3,9 +3,9 @@ from food_class import Food
 nutrition_set_all = []
 nutrition_set_lukas = []
 nutrition_set_daniel = []
+nutrition_set_lucas = []
+nutrition_set_rico = []
 
-nutrition_set_lucas = nutrition_set_all
-nutrition_set_rico = nutrition_set_all
 
 nutrition_sets = {
     "lukas": nutrition_set_lukas,
@@ -33,7 +33,9 @@ kidneybohnen = Food("Kidneybohnen", 21, 1, 36.5, 100, "g", [0.75, 1])
 nutrition_set_all.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
 nutrition_set_lukas.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, eier, milch, käse])
 nutrition_set_daniel.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen])
-nutrition_set_lucas.remove(milch)
+nutrition_set_lucas.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, käse])
+nutrition_set_rico.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
+
 
 
 # CARBS
@@ -73,9 +75,10 @@ raeuchertofu = Food("Räuchertofu", 19, 9, 2.8, 100, "g", [1, 2])
 nutrition_set_all.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
 nutrition_set_lukas.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
 nutrition_set_daniel.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
-nutrition_set_lucas.remove(buchweizen)
-nutrition_set_rico.remove(buchweizen)
-nutrition_set_rico.remove(süßkartoffeln)
+nutrition_set_lucas.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
+nutrition_set_rico.extend([reis, kartoffeln, honig, banane, apfel])
+#nutrition_set_rico.remove(buchweizen)
+#nutrition_set_rico.remove(süßkartoffeln)
 
 # FAT
 
@@ -88,4 +91,6 @@ hummus = Food("Hummus", 7.9, 9.6, 14.3, 100, "g", [0.25, 0.5, 0.75])
 nutrition_set_all.extend([nusskernmischung])
 nutrition_set_lukas.extend([nusskernmischung])
 nutrition_set_daniel.extend([nusskernmischung])
+nutrition_set_lucas.extend([nusskernmischung])
+nutrition_set_rico.extend([nusskernmischung])
 
