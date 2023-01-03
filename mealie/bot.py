@@ -59,6 +59,8 @@ def protein(update, context):
     match = re.search(r"\d+", update.message.text)
     if match:
         amount = int(match.group())
+        if amount > 400:
+            amount = 400
         goals[0] = amount
         update.message.reply_text(f"Dein Proteinziel ist {amount}g.")
     else:
