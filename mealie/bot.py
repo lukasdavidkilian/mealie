@@ -20,10 +20,6 @@ def mealie(update, context):
         result_str += result.__str__() + "\n"
         update.message.reply_text(result_str)
 
-
-
-
-
 def set_nutrition_set(update, context):
     # Split the message into words and lowercase the set name
     set_name = update.message.text.split()[1].lower()
