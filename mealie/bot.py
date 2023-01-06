@@ -8,10 +8,11 @@ import json
 from telegram import Document
 
 # Dictionary to store the macronutrient goals
-goals = [0, 0, 0]
-
+#goals = [context.user_data["protein_goal"], 0, 0]
+#goals = [context.user_data["protein_goal"], context.user_data["fat_goal"], context.user_data["carbohydrate_goal"]]
 
 def mealie(update, context):
+    goals = [context.user_data["protein_goal"], context.user_data["fat_goal"], context.user_data["carbohydrate_goal"]]
     # Call the mealie function and store the result in a variable
     for i in range(3):
         result = generate_meal_plans(context.user_data["nutrition_set"], goals)
@@ -33,13 +34,17 @@ def set_nutrition_set(update, context):
 
 
 def generate_shopping_list_command(update, context):
+    # Set the maximum number of days
+    max_days = 7
     # Get the number of days from the command
+    goals = [context.user_data["protein_goal"], context.user_data["fat_goal"], context.user_data["carbohydrate_goal"]]
     match = re.search(r"\d+", update.message.text)
     if match:
         number_of_days = int(match.group())
-    else:
-        update.message.reply_text("Please specify the number of days for which you want to generate a shopping list.")
-        return
+        # Check if the number of days is greater than the maximum number of days
+        if number_of_days > max_days:
+            update.message.reply_text(f"You can only generate a shopping list for a maximum of {max_days} days.")
+            return
 
     # Generate the shopping list and meal plans
     shopping_list_str, meal_plans = generate_shopping_list(number_of_days, context.user_data["nutrition_set"], goals)
@@ -57,7 +62,7 @@ def protein(update, context):
         amount = int(match.group())
         if amount > 400:
             amount = 400
-        goals[0] = amount
+        context.user_data["protein_goal"] = amount
         update.message.reply_text(f"Dein Proteinziel ist {amount}g.")
     else:
         update.message.reply_text("Bitte gib dein Proteinziel ein.")
@@ -68,7 +73,9 @@ def carbohydrate(update, context):
     match = re.search(r"\d+", update.message.text)
     if match:
         amount = int(match.group())
-        goals[2] = amount
+        if amount > 400:
+            amount = 400
+        context.user_data["carbohydrate_goal"] = amount
         update.message.reply_text(f"Dein Kohlenhydratziel ist {amount}g.")
     else:
         update.message.reply_text("Bitte gib dein Kohlenhydratziel ein.")
@@ -79,17 +86,33 @@ def fat(update, context):
     match = re.search(r"\d+", update.message.text)
     if match:
         amount = int(match.group())
-        goals[1] = amount
+        if amount > 100:
+            amount = 100
+        context.user_data["fat_goal"] = amount
         update.message.reply_text(f"Dein Fettziel ist {amount}g.")
     else:
         update.message.reply_text("Bitte gib dein Fettziel ein..")
 
 
+
 def ziele(update, context):
-    reply = f"Your goals are:\n"
-    reply += f"- Protein: {goals[0]} grams\n"
-    reply += f"- Carbohydrates: {goals[2]} grams\n"
-    reply += f"- Fat: {goals[1]} grams\n"
+    # Build the reply string
+    reply = "Deine Ziele sind:\n"
+    # Check if the protein goal is set
+    if "protein_goal" in context.user_data:
+        reply += f"- Protein: {context.user_data['protein_goal']}g\n"
+    else:
+        reply += "- Protein: Nicht gesetzt\n"
+    # Check if the carbohydrate goal is set
+    if "carbohydrate_goal" in context.user_data:
+        reply += f"- Kohlenhydrate: {context.user_data['carbohydrate_goal']}g\n"
+    else:
+        reply += "- Kohlenhydrate: Nicht gesetzt\n"
+    # Check if the fat goal is set
+    if "fat_goal" in context.user_data:
+        reply += f"- Fett: {context.user_data['fat_goal']}g\n"
+    else:
+        reply += "- Fett: Nicht gesetzt\n"
     update.message.reply_text(reply)
 
 
@@ -120,7 +143,7 @@ def save_message(update, context):
 
 
 
-updater = Updater("5838155917:AAGWYB3CcnMmYCuQiyl2gFghU1JOgcVQJog", use_context=True)
+updater = Updater("5800016260:AAFkVxLjJoGSFmpdHPzAPRw_r0gl3Z9TdPU", use_context=True)
 
 updater.dispatcher.add_handler(CommandHandler("mealie", mealie))
 updater.dispatcher.add_handler(CommandHandler("p", protein))
@@ -137,3 +160,7 @@ updater.dispatcher.add_handler(message_handler)
 
 updater.start_polling()
 updater.idle()
+
+
+# TEST 5800016260:AAFkVxLjJoGSFmpdHPzAPRw_r0gl3Z9TdPU
+# LIVE 5838155917:AAGWYB3CcnMmYCuQiyl2gFghU1JOgcVQJog

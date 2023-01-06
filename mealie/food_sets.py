@@ -5,6 +5,11 @@ nutrition_set_lukas = []
 nutrition_set_daniel = []
 nutrition_set_lucas = []
 nutrition_set_rico = []
+nutrition_set_stefan = []
+nutrition_set_schatu = []
+nutrition_set_yasar = []
+nutrition_set_sebastian = []
+nutrition_set_soula = []
 
 
 nutrition_sets = {
@@ -12,16 +17,24 @@ nutrition_sets = {
     "daniel": nutrition_set_daniel,
     "all": nutrition_set_all,
     "lucas": nutrition_set_lucas,
-    "rico": nutrition_set_rico
+    "rico": nutrition_set_rico,
+    "stefan": nutrition_set_stefan,
+    "schatu": nutrition_set_schatu,
+    "yasar": nutrition_set_yasar,
+    "sebastian": nutrition_set_sebastian,
+    "soula": nutrition_set_soula
 }
 
 # PROTEIN
 
 rinderhackfleisch = Food("Rinderhackfleisch", 25, 9, 0, 100, "g", [2.5, 3, 3.5, 4])
-hähnchenbrust = Food("Hähnchenbrust", 30, 1, 0, 100, "g", [2.5, 3, 3.5, 4])
+rinderleber = Food("Rinderleber", 19.2, 3.7, 5.3, 100, "g", [2.5])
+hähnchenbrust = Food("Hähnchenbrust", 30, 0, 0, 100, "g", [2.5, 3, 3.5, 4])
+hühnerherzen = Food("Hühnerherzen", 16, 5, 0, 100, "g", [2])
 putenbrust = Food("Putenbrust", 30, 1, 0, 100, "g", [2.5, 3, 3.5, 4])
 bauernschinken = Food("Bauernschinken", 26.3, 6.8, 1.1, 100, "g", [0.75, 1])
 lachs = Food("Lachs", 20, 13, 0, 100, "g", [1.25, 2.5])
+seelachs = Food("Seelachs", 17, 0.6, 0, 100, "g", [2])
 garnelen = Food("Garnelen", 18.6, 1.4, 0, 100, "g", [1.25, 2.5])
 eier = Food("Eier", 7.5, 6.5, 1, 1, "", [3, 4, 5,])
 milch = Food("Milch", 3.3, 4, 4.8, 100, "ml", [2.5, 3, 3.5, 4])
@@ -35,12 +48,15 @@ nutrition_set_lukas.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauer
 nutrition_set_daniel.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen])
 nutrition_set_lucas.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, käse])
 nutrition_set_rico.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
-
-
-
+nutrition_set_stefan.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, eier, milch, käse])
+nutrition_set_schatu.extend([rinderhackfleisch, hähnchenbrust, putenbrust, lachs, garnelen, eier, milch, käse])
+nutrition_set_yasar.extend([rinderhackfleisch, hähnchenbrust, putenbrust, garnelen, eier, milch, käse])
+nutrition_set_sebastian.extend([rinderhackfleisch, rinderleber, hähnchenbrust, hühnerherzen, bauernschinken,seelachs, garnelen, eier, milch])
+nutrition_set_soula.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
 # CARBS
 
 reis = Food("Basmati Reis", 8.8, 1, 75, 100, "g", [0.75, 1])
+pirincreis = Food("Pirinc Reis", 7.9, 1.2, 77.8, 100, "g", [0.75, 1])
 kartoffeln = Food("Kartoffeln", 2, 0, 17, 100, "g", [4, 5, 6])
 süßkartoffeln = Food("Süßkartoffeln", 1.6, 0.6, 24, 100, "g", [4, 5, 6])
 buchweizen = Food("Buchweizen", 10, 2, 70, 100, "g", [0.5, 1])
@@ -56,8 +72,8 @@ paprikarot = Food("Rote Paprika", 1.3, 0.5, 6.4, 100, "g", [1, 2, 3])
 paprikagelb = Food("Gelbe Paprika", 1, 0, 5, 100, "g", [1, 2, 3])
 paprikagrün = Food("Grüne Paprika", 1, 0, 2, 100, "g", [1, 2, 3])
 karotte = Food("Karotte", 1, 0.2, 4.8, 100, "g", [1, 2, 3])
-tomate = Food("Tomate", 0.7, 3.5, 0.1, 100, "g", [1, 2, 3])
-gurke = Food("Gurke", 0.6, 0.2, 1.8, 100, "g", [1, 2, 3])
+tomate = Food("Tomate", 0.7, 3.5, 0.1, 100, "g", [0.5, 1])
+gurke = Food("Gurke", 0.6, 0.2, 1.8, 100, "g", [0.5, 1])
 beerenmischung = Food("Beerenmischung TK", 1.4, 0.6, 12.1, 100, "g", [0.5, 1, 1.5])
 mandarine = Food("Mandarine", 0.7, 0.2, 10, 100, "g", [1, 2, 3])
 orange = Food("Orange", 1, 0.2, 8.2, 100, "g", [1, 2, 3])
@@ -77,13 +93,17 @@ nutrition_set_lukas.extend([reis, kartoffeln, süßkartoffeln, honig, banane, ap
 nutrition_set_daniel.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
 nutrition_set_lucas.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
 nutrition_set_rico.extend([reis, kartoffeln, honig, banane, apfel])
-#nutrition_set_rico.remove(buchweizen)
-#nutrition_set_rico.remove(süßkartoffeln)
+nutrition_set_stefan.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
+nutrition_set_schatu.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
+nutrition_set_yasar.extend([pirincreis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
+nutrition_set_sebastian.extend([reis, kartoffeln, buchweizen, honig, banane, apfel, tomate, gurke, spinat])
+nutrition_set_soula.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
 
 # FAT
 
 nusskernmischung = Food("Nusskernmischung", 21, 56, 11, 100, "g", [0.3])
-walnüsse = Food("Walnüsse", 16, 71, 6, 100, "g", [0.3])
+walnüsse = Food("Avocado", 16, 71, 6, 100, "g", [0.3])
+avocado = Food("Walnüsse", 2, 15, 9, 100, "g", [1.5, 2])
 olivenoel = Food("Olivenöl", 0, 100, 0.2, 100, "g", [0.15, 0.3, 0.45])
 butterschmalz = Food("Butterschmalz", 0.3, 100, 0, 100, "g", [0.3])
 hummus = Food("Hummus", 7.9, 9.6, 14.3, 100, "g", [0.25, 0.5, 0.75])
@@ -93,4 +113,11 @@ nutrition_set_lukas.extend([nusskernmischung])
 nutrition_set_daniel.extend([nusskernmischung])
 nutrition_set_lucas.extend([nusskernmischung])
 nutrition_set_rico.extend([nusskernmischung])
+nutrition_set_stefan.extend([nusskernmischung])
+nutrition_set_schatu.extend([nusskernmischung])
+nutrition_set_yasar.extend([nusskernmischung])
+nutrition_set_sebastian.extend([avocado])
+nutrition_set_soula.extend([nusskernmischung])
+
+
 
