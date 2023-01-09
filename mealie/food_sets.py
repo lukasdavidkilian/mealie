@@ -10,6 +10,8 @@ nutrition_set_schatu = []
 nutrition_set_yasar = []
 nutrition_set_sebastian = []
 nutrition_set_soula = []
+nutrition_set_emil = []
+nutrition_set_adrian = []
 
 
 nutrition_sets = {
@@ -22,7 +24,10 @@ nutrition_sets = {
     "schatu": nutrition_set_schatu,
     "yasar": nutrition_set_yasar,
     "sebastian": nutrition_set_sebastian,
-    "soula": nutrition_set_soula
+    "soula": nutrition_set_soula,
+    "emil": nutrition_set_emil,
+    "adrian": nutrition_set_adrian
+
 }
 
 # PROTEIN
@@ -53,6 +58,8 @@ nutrition_set_schatu.extend([rinderhackfleisch, hähnchenbrust, putenbrust, lach
 nutrition_set_yasar.extend([rinderhackfleisch, hähnchenbrust, putenbrust, garnelen, eier, milch, käse])
 nutrition_set_sebastian.extend([rinderhackfleisch, rinderleber, hähnchenbrust, hühnerherzen, bauernschinken,seelachs, garnelen, eier, milch])
 nutrition_set_soula.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
+nutrition_set_emil.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, eier, milch])
+nutrition_set_adrian.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
 # CARBS
 
 reis = Food("Basmati Reis", 8.8, 1, 75, 100, "g", [0.75, 1])
@@ -98,6 +105,8 @@ nutrition_set_schatu.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honi
 nutrition_set_yasar.extend([pirincreis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
 nutrition_set_sebastian.extend([reis, kartoffeln, buchweizen, honig, banane, apfel, tomate, gurke, spinat])
 nutrition_set_soula.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
+nutrition_set_emil.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
+nutrition_set_adrian.extend([reis, kartoffeln, buchweizen, honig, banane, paprikarot, mango])
 
 # FAT
 
@@ -118,6 +127,8 @@ nutrition_set_schatu.extend([nusskernmischung])
 nutrition_set_yasar.extend([nusskernmischung])
 nutrition_set_sebastian.extend([avocado])
 nutrition_set_soula.extend([nusskernmischung])
+nutrition_set_emil.extend([nusskernmischung])
+nutrition_set_adrian.extend([nusskernmischung])
 
 
 
