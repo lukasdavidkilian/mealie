@@ -27,6 +27,7 @@ def generate_meal_plans(nutrition_set, goals):
                     fat -= current_food.fat * amounts_dictionary[current_food]
                     carbohydrate -= current_food.carbs * amounts_dictionary[current_food]
                     plan_array.append(current_food)
+                    counter += 1
         if -10 <= protein <= 10 and -5 <= fat <= 5 and -10 <= carbohydrate <= 10:
             meal_plan = MealPlan(plan_array, goals[0], goals[1], goals[2], amounts_dictionary)
             return meal_plan
