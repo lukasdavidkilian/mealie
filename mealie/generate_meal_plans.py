@@ -4,7 +4,7 @@ from meal_plan import MealPlan, meal_plans
 
 def generate_meal_plans(nutrition_set, goals):
     counter = 0;
-    while counter < 10000:
+    while counter < 10000000:
 
         protein_goal = goals[0]
         fat_goal = goals[1]
