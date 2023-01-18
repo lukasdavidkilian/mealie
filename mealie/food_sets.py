@@ -15,6 +15,8 @@ nutrition_set_adrian = []
 nutrition_set_martin = []
 nutrition_set_fabian = []
 nutrition_set_celina = []
+nutrition_set_chris = []
+nutrition_set_serhat = []
 
 nutrition_sets = {
     "lukas": nutrition_set_lukas,
@@ -31,7 +33,9 @@ nutrition_sets = {
     "adrian": nutrition_set_adrian,
     "martin": nutrition_set_martin,
     "fabian": nutrition_set_fabian,
-    "celina": nutrition_set_celina
+    "celina": nutrition_set_celina,
+    "chris": nutrition_set_chris,
+    "serhat": nutrition_set_serhat
 
 }
 
@@ -68,10 +72,13 @@ nutrition_set_schatu.extend([rinderhackfleisch, hähnchenbrust, putenbrust, lach
 nutrition_set_yasar.extend([rinderhackfleisch, hähnchenbrust, putenbrust, garnelen, eier, milch, käse])
 nutrition_set_sebastian.extend([rinderhackfleisch, rinderleber, hähnchenbrust, hühnerherzen, bauernschinken,seelachs, garnelen, eier, milch])
 nutrition_set_soula.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
-nutrition_set_emil.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, eier, milch])
+nutrition_set_emil.extend([rinderhackfleisch, rinderfilet, bacon, hähnchenbrust, putenbrust, eier, milch])
 nutrition_set_adrian.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, garnelen, eier, milch, käse])
 nutrition_set_martin.extend([rinderhackfleisch, hähnchenbrust, putenbrust, bauernschinken, lachs, eier, milch])
 nutrition_set_celina.extend([rinderhackfleisch, hähnchenbrust, putenbrust, eier, milch, käse, rinderfilet, bacon, gouda, salami, parmesan])
+nutrition_set_chris.extend([rinderhackfleisch, hähnchenbrust, putenbrust, eier, milch, käse, bacon, salami])
+nutrition_set_serhat.extend([rinderhackfleisch, hähnchenbrust, putenbrust, lachs, garnelen, eier, milch])
+
 # CARBS
 
 reis = Food("Basmati Reis", 8.8, 1, 75, 100, "g", [0.75, 1])
@@ -119,10 +126,12 @@ nutrition_set_schatu.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honi
 nutrition_set_yasar.extend([pirincreis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
 nutrition_set_sebastian.extend([reis, kartoffeln, buchweizen, honig, banane, apfel, tomate, gurke, spinat])
 nutrition_set_soula.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
-nutrition_set_emil.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
+nutrition_set_emil.extend([reis, kartoffeln, süßkartoffeln, honig, banane, apfel])
 nutrition_set_adrian.extend([reis, kartoffeln, buchweizen, honig, banane, paprikarot, mango])
 nutrition_set_martin.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
 nutrition_set_celina.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel, maracuja, orange, milchreis, gurke, karotte])
+nutrition_set_chris.extend([reis, kartoffeln, spinat, buchweizen, honig, banane, apfel])
+nutrition_set_serhat.extend([reis, kartoffeln, süßkartoffeln, buchweizen, honig, banane, apfel])
 
 # FAT
 
@@ -144,10 +153,14 @@ nutrition_set_schatu.extend([nusskernmischung])
 nutrition_set_yasar.extend([nusskernmischung])
 nutrition_set_sebastian.extend([avocado])
 nutrition_set_soula.extend([nusskernmischung])
-nutrition_set_emil.extend([nusskernmischung])
+nutrition_set_emil.extend([nusskernmischung, avocado])
 nutrition_set_adrian.extend([nusskernmischung])
 nutrition_set_martin.extend([nusskernmischung])
 nutrition_set_celina.extend([avocado, butter])
+nutrition_set_chris.extend([nusskernmischung])
+nutrition_set_serhat.extend([nusskernmischung])
+
+
 
 
 

@@ -10,7 +10,7 @@ def generate_shopping_list(number_of_days, nutrition_set, goal):
 
     # Generate the meal plans
     for i in range(number_of_days):
-        meal_plans.append(generate_meal_plans(nutrition_set_lukas, goal))
+        meal_plans.append(generate_meal_plans(nutrition_set, goal))
 
     # Generate the shopping list
     for meal_plan in meal_plans:

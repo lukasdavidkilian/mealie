@@ -127,11 +127,7 @@ def hilfe(update, context):
     reply += "/hilfe - Zeigt diese Hilfe an.\n"
     update.message.reply_text(reply)
 
-def starten(update, context):
-    # Open the PDF file and get its file object
-    with open("/Users/lukaskilian/PycharmProjects/mealie/mealie/Mealie_Help_Command.pdf", "rb") as f:
-        # Use the send_document method to send the file to the user
-        context.bot.send_document(chat_id=update.effective_chat.id, document=f)
+
 
 def save_message(update, context):
     # Get the message and chat_id from the update
@@ -153,7 +149,6 @@ updater.dispatcher.add_handler(CommandHandler("ziele", ziele))
 updater.dispatcher.add_handler(CommandHandler("hilfe", hilfe))
 updater.dispatcher.add_handler(CommandHandler("set", set_nutrition_set))
 updater.dispatcher.add_handler(CommandHandler("einkaufen", generate_shopping_list_command))
-updater.dispatcher.add_handler(CommandHandler("starten", starten))
 # Create a MessageHandler to handle all incoming messages
 message_handler = MessageHandler(Filters.all, save_message)
 updater.dispatcher.add_handler(message_handler)
